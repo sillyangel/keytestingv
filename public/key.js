@@ -21,20 +21,21 @@ function setCookie(cname,cvalue,exdays) {
     return "";
   }
 
-  function checkCookie() {
-    var key = prompt("What is key", "Get key at my very private discord account");
-    if (key != "aGlzdG9yeQ==") {
-      realcheckCookie()
-    } else {
-      window.location.assign("https://google.com");
-    }
-  }
-  function realcheckCookie() {
+  function GiveCookie() {
     let user = getCookie("key");
     if (user != "") {
-      console.log("user got the key right");
+        console.log("Welcome Back")
     } else {
-      user = "key";
-      setCookie("key", user, 30);
+        checkotherCookie();
+    }
+  }
+  function checkotherCookie() {
+    let user = getCookie("key");
+    var key = prompt("What is key", "fard");
+    if (key == "aGlzdG9yeQ==") {
+        user = "key";
+        setCookie("key", user, 30);
+    } else {
+      window.location.assign("https://google.com");
     }
   }
